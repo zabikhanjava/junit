@@ -6,14 +6,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class JUnitServiceImpl implements JUnitService {
 
+	@Autowired
 	SomeDependency someDependency;
 
-	/*
-	 * @Autowired JUnitServiceImpl() { this.someDependency = someDependency; }
-	 */
 	public String pop() {
 		return someDependency.display();
 
 	}
 
+	JUnitServiceImpl(SomeDependency someDependency) {
+		this.someDependency = someDependency;
+	}
+	JUnitServiceImpl() {
+		this.someDependency = someDependency;
+	}
 }
