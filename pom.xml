@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<!-- ismail-->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -34,7 +35,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -49,3 +49,5 @@
 	</build>
 
 </project>
+<!--ismail-->
+<!-- this is from remote-->
