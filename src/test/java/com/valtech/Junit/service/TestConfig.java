@@ -1,23 +1,28 @@
 package com.valtech.Junit.service;
 
+import com.valtech.Junit.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 
 @Configuration
 public class TestConfig {
 
-	
-	@Bean
-	public SomeDependency popppp()
-	{
-		return new SomeDependency();
-	}
 
-@Bean
-public JUnitServiceImpl pop()
-{
-	JUnitServiceImpl j=new JUnitServiceImpl(popppp());
-	return j;
-	
+    @Bean
+    public ProductRepository someDependencyInterfaceInstance() {
+        return new ProductRepositoryImpl();
+    }
+    @Bean
+    public EmailService emailServiceInstance() {
+        return new EmailServiceImpl();
+    }
+
+    @Bean
+    public ProductService pop() {
+        ProductService productService = new ProductServiceImpl(someDependencyInterfaceInstance(),emailServiceInstance());
+        return productService;
+
+    }
 }
-}
+
